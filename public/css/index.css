@@ -1,0 +1,31 @@
+.page-title {
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.app-count {
+  text-align: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 3px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.search-item {
+  max-width: 50%;
+}

@@ -1,0 +1,37 @@
+{
+  "name": "make-in-india-app-backend",
+  "version": "1.0.0",
+  "description": "Backend service for Make In India App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishavsaha98/make-india-app-backend.git"
+  },
+  "author": "Rishav Saha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishavsaha98/make-india-app-backend/issues"
+  },
+  "homepage": "https://github.com/rishavsaha98/make-india-app-backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.11"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0"
+  }
+}

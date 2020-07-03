@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ("partials/head.ejs") -%>
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+  </head>
+  <body>
+    <%- include ("partials/navbar.ejs") -%>
+    <div class="page-title">All apps</div>
+    <div class="app-count">Total apps in DB: <%- apps.length -%></div>
+    <br />
+    <div class="container">
+      <form
+        action="/search"
+        method="POST"
+        class="container form-inline search-item"
+      >
+        <label for="searchString">Search by category</label>
+        <div class="form-group mx-sm-3 mb-2">
+          <input
+            type="text"
+            class="form-control"
+            id="searchCategory"
+            name="searchCategory"
+            placeholder="Enter category..."
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-secondary mb-2">Search</button>
+      </form>
+      <form
+        action="/search/name"
+        method="POST"
+        class="container form-inline search-item"
+      >
+        <label for="searchName">Search by name</label>
+        <div class="form-group mx-sm-3 mb-2">
+          <input
+            type="text"
+            class="form-control"
+            id="searchName"
+            name="searchName"
+            placeholder="Enter name..."
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-secondary mb-2">Search</button>
+      </form>
+    </div>
+    <br />
+    <br />
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Alt1_name</th>
+        <th>Alt1_origin</th>
+        <th>Alt1_playstore</th>
+        <th>Alt1_appstore</th>
+        <th>Alt2_name</th>
+        <th>Alt2_origin</th>
+        <th>Alt2_playstore</th>
+        <th>Alt2_appstore</th>
+        <th>Alt3_name</th>
+        <th>Alt3_origin</th>
+        <th>Alt3_playstore</th>
+        <th>Alt3_appstore</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      <% for (let i = 0; i < apps.length; i++) { %>
+      <tr>
+        <td><%- i+1 -%></td>
+        <td><%- apps[i].dataValues.name -%></td>
+        <td style="text-transform: capitalize;">
+          <%- apps[i].dataValues.category -%>
+        </td>
+        <td><%- apps[i].dataValues.alt1_name -%></td>
+        <td><%- apps[i].dataValues.alt1_origin -%></td>
+        <td>
+          <% if (apps[i].dataValues.alt1_playstore === "") {%> <%- "NA" -%> <% }
+          else { %>
+          <a href="<%- apps[i].dataValues.alt1_playstore -%>" target="_blank"
+            >Link</a
+          >
+          <% } %>
+        </td>
+        <td>
+          <% if (apps[i].dataValues.alt1_appstore === "") {%> <%- "NA" -%> <% }
+          else { %>
+          <a href="<%- apps[i].dataValues.alt1_appstore -%>" target="_blank"
+            >Link</a
+          >
+          <% } %>
+        </td>
+        <td><%- apps[i].dataValues.alt2_name -%></td>
+        <td><%- apps[i].dataValues.alt2_origin -%></td>
+        <td>
+          <% if (apps[i].dataValues.alt2_playstore === "") {%> <%- "NA" -%> <% }
+          else { %>
+          <a href="<%- apps[i].dataValues.alt2_playstore -%>" target="_blank"
+            >Link</a
+          >
+          <% } %>
+        </td>
+        <td>
+          <% if (apps[i].dataValues.alt2_appstore === "") {%> <%- "NA" -%> <% }
+          else { %>
+          <a href="<%- apps[i].dataValues.alt2_appstore -%>" target="_blank"
+            >Link</a
+          >
+          <% } %>
+        </td>
+        <td><%- apps[i].dataValues.alt3_name -%></td>
+        <td><%- apps[i].dataValues.alt3_origin -%></td>
+        <td>
+          <% if (apps[i].dataValues.alt3_playstore === "") {%> <%- "NA" -%> <% }
+          else { %>
+          <a href="<%- apps[i].dataValues.alt3_playstore -%>" target="_blank"
+            >Link</a
+          >
+          <% } %>
+        </td>
+        <td>
+          <% if (apps[i].dataValues.alt3_appstore === "") {%> <%- "NA" -%> <% }
+          else { %>
+          <a href="<%- apps[i].dataValues.alt3_appstore -%>" target="_blank"
+            >Link</a
+          >
+          <% } %>
+        </td>
+        <td>
+          <a
+            href="/update/<%-apps[i].dataValues.id-%>"
+            class="btn btn-primary"
+            style="font-size: 12px;"
+            >Update</a
+          >
+        </td>
+        <td>
+          <a
+            href="/delete/<%-apps[i].dataValues.id-%>"
+            class="btn btn-danger"
+            style="font-size: 12px;"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      <% } %>
+    </table>
+    <%- include ("partials/script.ejs") -%>
+  </body>
+</html>

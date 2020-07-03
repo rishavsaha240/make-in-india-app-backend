@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ("partials/head.ejs") -%>
+    <link rel="stylesheet" type="text/css" href="/css/bulk-app.css" />
+  </head>
+  <body>
+    <%- include ("partials/navbar.ejs") -%>
+    <br>
+    <br>
+    <form
+      action="/update/<%- app.dataValues.id -%>"
+      method="POST"
+      class="container"
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          value="<%-app.dataValues.name-%>"
+          maxlength="300"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input
+          type="text"
+          class="form-control"
+          id="category"
+          name="category"
+          value="<%-app.dataValues.category-%>"
+          maxlength="300"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="origin">Origin</label>
+        <input
+          type="text"
+          class="form-control"
+          id="origin"
+          name="origin"
+          value="<%-app.dataValues.origin-%>"
+          maxlength="300"
+          required
+        />
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="alt1_name">Alt1_name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt1_name"
+              name="alt1_name"
+              value="<%-app.dataValues.alt1_name-%>"
+              placeholder="Name of alternate app 1"
+              maxlength="300"
+              required
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="alt1_origin">Alt1_origin</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt1_origin"
+              name="alt1_origin"
+              value="<%-app.dataValues.alt1_origin-%>"
+              placeholder="Origin of alternate app 1"
+              maxlength="300"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="alt1_playstore">Alt1_playstore link</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt1_playstore"
+              name="alt1_playstore"
+              value="<%-app.dataValues.alt1_playstore-%>"
+              placeholder="Playstore link of alternate app 1"
+              maxlength="300"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="alt1_appstore">Alt1_appstore link</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt1_appstore"
+              name="alt1_appstore"
+              value="<%-app.dataValues.alt1_appstore-%>"
+              placeholder="Appstore link of alternate app 1"
+              maxlength="300"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="alt2_name">Alt2_name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt2_name"
+              name="alt2_name"
+              value="<%-app.dataValues.alt2_name-%>"
+              placeholder="Name of alternate app 2"
+              maxlength="300"
+              required
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="alt2_origin">Alt2_origin</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt2_origin"
+              name="alt2_origin"
+              value="<%-app.dataValues.alt2_origin-%>"
+              placeholder="Origin of alternate app 2"
+              maxlength="300"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="alt2_playstore">Alt2_playstore link</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt2_playstore"
+              name="alt2_playstore"
+              value="<%-app.dataValues.alt2_playstore-%>"
+              placeholder="Playstore link of alternate app 2"
+              maxlength="300"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="alt2_appstore">Alt2_appstore link</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt2_appstore"
+              name="alt2_appstore"
+              value="<%-app.dataValues.alt2_appstore-%>"
+              placeholder="Appstore link of alternate app 2"
+              maxlength="300"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="alt3_name">Alt3_name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt3_name"
+              name="alt3_name"
+              value="<%-app.dataValues.alt3_name-%>"
+              placeholder="Name of alternate app 3"
+              maxlength="300"
+              required
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="alt3_origin">Alt3_origin</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt3_origin"
+              name="alt3_origin"
+              value="<%-app.dataValues.alt3_origin-%>"
+              placeholder="Origin of alternate app 3"
+              maxlength="300"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="alt3_playstore">Alt3_playstore link</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt3_playstore"
+              name="alt3_playstore"
+              value="<%-app.dataValues.alt3_playstore-%>"
+              placeholder="Playstore link of alternate app 3"
+              maxlength="300"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="alt3_appstore">Alt3_appstore link</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alt3_appstore"
+              name="alt3_appstore"
+              value="<%-app.dataValues.alt3_appstore-%>"
+              placeholder="Appstore link of alternate app 3"
+              maxlength="300"
+            />
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">Update</button>
+    </form>
+
+    <%- include ("partials/script.ejs") -%>
+  </body>
+</html>
